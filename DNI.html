@@ -1,0 +1,38 @@
+<!DOCTYPE htmal>
+<html lang"ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	<title>dni</title>
+</head>
+<body>
+<div class="container-fluid" style ="margin-top:20px;">
+<input type="text" id="dni" placeholder="Introdueix dni">
+<input type="button" id="calcular" value="calcula lletra" class="btn btn-warning">
+
+
+<div id="resultat"></div>
+
+</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	</script>
+
+<script>
+$(document).ready(function(){
+	$("#calcular").click(function(){
+		$("#resultat").empty();
+		var lletres = "TRWAGMYFPDXBNJZSQVHLCKET";
+		var dni = $("#dni").val();
+		if(dni>0 && dni<99999999){
+		var posicio = dni % 23;
+		$("#resultat").append("<h1>"+lletres[posicio]+"</h1>");
+	}
+		else{
+			$("#resultat").append("<h1>ERROR NOMBRE NO VÀLID</h1>");
+			}
+	});
+});
+</script>
+</body>
+</html>
